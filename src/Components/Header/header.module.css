@@ -1,0 +1,59 @@
+/* src/components/Header.css */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: white;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+}
+
+.header__logoimg {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.header__nav {
+  display: flex;
+  gap: 20px;
+}
+
+.header__link {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+
+.header__auth {
+  display: flex;
+}
+
+.header__button {
+  background-color: #5f63f2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.header__button:hover {
+  background-color: #474bb7;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header__nav {
+    margin-top: 10px;
+    flex-direction: row;
+    justify-content: center;
+  }
+}

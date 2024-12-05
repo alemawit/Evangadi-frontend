@@ -1,0 +1,117 @@
+.container_wrapper
+{
+    background-image: url('../assets/image/background.png');
+  background-size: cover; /* This will make the image cover the entire screen */
+  background-position: center; /* This centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  display: flex;
+  padding-left: 100px;
+}
+/* Container for the login section */
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+
+  background-color: #f5f5f5;
+  margin: 40px;
+  background-color: #fff;
+  
+  
+}
+
+/* Box containing the login form */
+.loginBox {
+  width: 600px;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Title of the login form */
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Input groups for form fields */
+.inputGroup {
+  margin-bottom: 20px;
+}
+
+.inputGroup label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+/* Input field styling */
+.inputField {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  align-items: center;
+}
+
+/* Password wrapper to position the icon inside */
+.passwordWrapper {
+  position: relative;
+}
+
+.togglePassword {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #777;
+}
+
+/* Link to forgot password */
+.forgotPassword {
+  display: block;
+  margin-top: 10px;
+  text-align: right;
+  color: #e67300;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.forgotPassword:hover {
+  text-decoration: underline;
+}
+
+/* Register link styling */
+.registerLink {
+  color: #e67300;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.registerLink:hover {
+  text-decoration: underline;
+}
+
+/* Login button styling */
+.loginButton {
+  width: 100%;
+  height: 40px;
+  background-color: #4c6ef5;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.loginButton:hover {
+  background-color: #3b5bdb;
+}
+
