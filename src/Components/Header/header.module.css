@@ -7,16 +7,19 @@
   background-color: white;
   border-bottom: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding-bottom: 18px;
 }
 
 .header__logo {
+    
   display: flex;
   align-items: center;
 }
 
 .header__logoimg {
-  height: 40px;
-  margin-right: 10px;
+    padding-left: 65px;
+  height: 35px;
+  margin-right: 40px;
 }
 
 .header__nav {
