@@ -1,27 +1,32 @@
-/* src/components/Header.css */
+/* Container for the header */
 .header {
+  position: fixed; /* Fix the header at the top */
+  top: 0;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
   background-color: white;
-  border-bottom: 8px;
+  border-bottom: 8px solid transparent;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding-bottom: 18px;
+  z-index: 1000; /* Ensure it stays above other elements */
 }
 
+/* Logo styles */
 .header__logo {
-    
   display: flex;
   align-items: center;
 }
 
 .header__logoimg {
-    padding-left: 65px;
+  padding-left: 65px;
   height: 35px;
   margin-right: 40px;
 }
 
+/* Navigation styles */
 .header__nav {
   display: flex;
   gap: 20px;
@@ -33,23 +38,27 @@
   font-weight: 500;
 }
 
+/* Authentication buttons */
 .header__auth {
   display: flex;
 }
 
 .header__button {
+    box-sizing: border-box;
   background-color: #5f63f2;
   color: white;
   border: none;
   border-radius: 5px;
-  padding: 10px 20px;
+  padding: 10px 30px;
   cursor: pointer;
+  margin-right: 30px;
 }
 
 .header__button:hover {
   background-color: #474bb7;
 }
 
+/* Responsive styling */
 @media screen and (max-width: 768px) {
   .header {
     flex-direction: column;

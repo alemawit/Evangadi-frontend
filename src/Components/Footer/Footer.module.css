@@ -1,0 +1,78 @@
+/* Container for the footer */
+.footerContainer {
+ 
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 50px;
+  
+  background-color: #3B455A; /* Dark background color */
+  color: #fff; /* White text color */
+  
+}
+
+/* Each section of the footer */
+.footerSection {
+  width: 50%;
+  padding-left: 100px;
+}
+
+/* Footer section titles */
+.footerSection h3 {
+  margin-bottom: 10px;
+}
+.footer_logo{
+    background-color: #3B455A;
+
+    
+}
+
+/* Social icons container */
+.socialIcons {
+   margin-top: 40px;
+  display: flex;
+  gap: 10px;
+}
+/* .icon_color{
+    color: #F6F6F7;
+} */
+
+/* Style for social icons */
+.socialIcons a {
+  color: #fff; /* White color for icons */
+  font-size: 35px;
+  transition: color 0.3s ease;
+}
+
+
+/* Hover effect for social icons */
+.socialIcons a:hover {
+  color: #FFFFFF; /* Color change on hover */
+}
+
+/* Useful links list */
+.footerSection ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Each link in the useful links list */
+.footerSection ul li {
+  margin-bottom: 10px;
+}
+
+/* Style for footer links */
+.footerSection a {
+  color: #808994; /* White color for links */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect for footer links */
+.footerSection a:hover {
+  color: #FFFFFF; /* Color change on hover */
+}
+
+.footerSection ul  {
+    color: #808994;
+}

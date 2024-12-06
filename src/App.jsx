@@ -6,6 +6,7 @@ import { Route, Routes } from 'react-router-dom'
 import axiosBase from './axiosConfig'
 import { useNavigate } from 'react-router-dom'
 import Header from './Components/Header/Header'
+import Footer from './Components/Footer/Footer'
 export const AppState=createContext();
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>
+      <Footer/>
     </AppState.Provider>
   );
 }
