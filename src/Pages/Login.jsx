@@ -15,7 +15,7 @@ function Login() {
     e.preventDefault();
 
     const emailValue = emailDom.current.value;
-    const passwordValue = passwordDom.current.value;
+    const passwordValue = emailDom.current.value;
 
     if (!emailValue || !passwordValue) {
       alert("Please provide all required information!");
@@ -46,7 +46,7 @@ function Login() {
       <section className={classes.loginContainer}>
         <div className={classes.loginBox}>
           <h2 className={classes.title}>Login to your account</h2>
-          <p>
+          <p className={classes.create_account_para}>
             Don’t have an account?{" "}
             <Link to="/register" className={classes.registerLink}>
               Create a new account
@@ -55,7 +55,6 @@ function Login() {
 
           <form onSubmit={handleSubmit}>
             <div className={classes.inputGroup}>
-              <label>Email address</label>
               <input
                 ref={emailDom}
                 type="email"
@@ -64,7 +63,6 @@ function Login() {
               />
             </div>
             <div className={classes.inputGroup}>
-              <label>Password</label>
               <div className={classes.passwordWrapper}>
                 <input
                   ref={passwordDom}
@@ -89,8 +87,26 @@ function Login() {
           </form>
         </div>
       </section>
-      <section className={classes.about_container}>
-
+      <section className={classes.aboutContainer}>
+        <div className={classes.aboutBox}>
+          <p className={classes.title_abt}>About</p>
+          <h1 className={classes.subtitle}>Evangadi Networks</h1>
+          <p className={classes.description}>
+            No matter what stage of life you are in, whether you’re just
+            starting elementary school or being promoted to CEO of a Fortune 500
+            company, you have much to offer to those who are trying to follow in
+            your footsteps.
+          </p>
+          <br />
+          <p className={classes.description}>
+            Whether you are willing to share your knowledge or you are just
+            looking to meet mentors of your own, please start by joining the
+            network here.
+          </p>
+          <Link to="/how-it-works" className={classes.howItWorksButton}>
+            HOW IT WORKS
+          </Link>
+        </div>
       </section>
     </div>
   );

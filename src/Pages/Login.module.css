@@ -1,33 +1,31 @@
-.container_wrapper
-{
-    background-image: url('../assets/image/background.png');
-  background-size: cover; /* This will make the image cover the entire screen */
-  background-position: center; /* This centers the image */
-  background-repeat: no-repeat; /* Prevents the image from repeating */
+/* Container wrapper for both login and about sections */
+.container_wrapper {
+  background: url('../assets/image/background.png') no-repeat center center;
+  background-size: cover; /* Cover the entire container */
   display: flex;
-  padding-left: 100px;
+  justify-content: space-between; /* Space between login and about sections */
+  padding: 20px;
+  height: 100vh; /* Full height to cover the viewport */
+  box-sizing: border-box; /* Include padding in element's total width and height */
 }
+
 /* Container for the login section */
 .loginContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60vh;
-
-  background-color: #f5f5f5;
-  margin: 40px;
-  background-color: #fff;
-  
-  
+  background-color: rgba(255, 255, 255, 1); /* Semi-transparent background */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-left: 60px;
+  width: 45%; /* Take 45% of the container width */
+  height: 400px;
+  padding-bottom: 80px;
 }
 
 /* Box containing the login form */
 .loginBox {
-  width: 600px;
-  padding: 30px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
 }
 
 /* Title of the login form */
@@ -36,6 +34,14 @@
   font-weight: bold;
   margin-bottom: 10px;
   text-align: center;
+  color: #334767;
+  
+}
+.create_account_para {
+  padding-bottom: 20px;
+  padding-top: 10px;
+  text-align: center;
+  color: #6F748E;
 }
 
 /* Input groups for form fields */
@@ -43,35 +49,35 @@
   margin-bottom: 20px;
 }
 
-.inputGroup label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: 500;
-}
-
 /* Input field styling */
 .inputField {
-  width: 100%;
-  height: 40px;
+  width: 80vh;
+  align-items: center;
+  margin-left: 30px;
+  height: 30px;
   padding: 10px;
+  margin-right: 20px;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 14px;
-  align-items: center;
 }
 
 /* Password wrapper to position the icon inside */
 .passwordWrapper {
   position: relative;
+  /* padding-right: 20px; */
 }
 
 .togglePassword {
   position: absolute;
-  right: 10px;
+  right: 40px;
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
-  color: #777;
+  color: #999A9C;
+}
+.togglePassword:hover{
+    color: #FC8960;
 }
 
 /* Link to forgot password */
@@ -82,6 +88,8 @@
   color: #e67300;
   text-decoration: none;
   font-size: 14px;
+  padding-bottom: 20px;
+  padding-right: 30px;
 }
 
 .forgotPassword:hover {
@@ -101,8 +109,10 @@
 
 /* Login button styling */
 .loginButton {
-  width: 100%;
-  height: 40px;
+  width: 91%;
+  align-items: center;
+  margin-left: 30px;
+  height: 50px;
   background-color: #4c6ef5;
   color: #fff;
   font-size: 16px;
@@ -115,3 +125,68 @@
   background-color: #3b5bdb;
 }
 
+/* Container for the About section */
+
+.aboutContainer { 
+    display: flex; justify-content: center; 
+    align-items: center; /* Center the content vertically */ 
+    /* background-color: #F8F8F8; */
+    background-color: transparent; /* Make the background fully transparent */ 
+    
+    border-radius: 8px; 
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  */
+    padding: 20px; 
+    height: 500px; 
+    width: 45%; /* Take 45% of the container width */
+    border: none;
+}
+    
+
+/* Box containing the About content */
+.aboutBox {
+  width: 100%;
+}
+
+/* Title of the About section */
+.title_abt {
+  font-size: 20px;
+  color: #FF8301;
+  font-weight: 200;
+  margin-bottom: 10px;
+  text-align: left;
+
+}
+
+/* Subtitle for Evangadi Networks */
+.subtitle {
+  font-size: 40px;
+  color: #DA3C00;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* Description text */
+.description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #999A99;
+  margin-bottom: 20px;
+  font-family: Arial, sans-serif;
+  /* text-align: center; */
+}
+
+/* Button to the How It Works page */
+.howItWorksButton {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #FD8401;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.howItWorksButton:hover {
+  background-color: #FD8401;
+}
