@@ -1,6 +1,6 @@
 /* Container wrapper for both login and about sections */
 .container_wrapper {
-  background: url('../assets/image/background.png') no-repeat center center;
+  background: url('../../assets/image/background.png') no-repeat center center;
   background-size: cover; /* Cover the entire container */
   display: flex;
   justify-content: space-between; /* Space between login and about sections */
@@ -191,4 +191,26 @@
 
 .howItWorksButton:hover {
   background-color: #FD8401;
+}
+/***** style for signup form ****/
+/* Add your existing styles here */
+
+/* New styles for create account form */
+.privacyLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.privacyLabel a {
+  color: #4c6ef5;
+  text-decoration: underline;
+}
+
+.privacyLabel a:hover {
+  color: #3b5bdb;
+}
+.first_lastName{
+    display: flex;
 }

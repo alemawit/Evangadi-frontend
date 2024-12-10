@@ -1,6 +1,6 @@
 import React from 'react'
 import { useRef } from 'react'
-import axiosBase from '../axiosConfig'
+import axios from '../axiosConfig'
 import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
@@ -29,12 +29,12 @@ function Register() {
             return;
         }
         try {
-            await axiosBase.post("/users/register",{
-                username:usernameValue,
-                firstname:firstnameValue,
-                lastname:lastnameValue,
-                email:emailValue,
-                password:passwordValue
+            await axios.post("/users/register", {
+              username: usernameValue,
+              firstname: firstnameValue,
+              lastname: lastnameValue,
+              email: emailValue,
+              password: passwordValue,
             });
             alert('registration successful please login')
             navigate('/login')

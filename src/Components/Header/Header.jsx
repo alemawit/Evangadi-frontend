@@ -22,7 +22,7 @@ const Header = () => {
             LOGOUT
           </button>
         ) : (
-          <Link to="/login">
+          <Link to="/auth">
             <button className={classes.header__button}>SIGN IN</button>
           </Link>
         )}
