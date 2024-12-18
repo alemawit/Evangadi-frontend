@@ -1,0 +1,161 @@
+/* Container for the entire form */
+body{
+    background-color: #F5F5F5;
+}
+.container {
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  background-color: #F5F5F5; /* Light background color */
+}
+/* steps title */
+.steps_title {
+  font-size: 1.5rem; /* Adjust as needed */
+  font-weight: bold;
+  display: flex;
+  gap: 10px; /* Keeps the underline close to text size */
+}
+
+.steps_title span {
+  color: inherit; /* Keeps the span text style unchanged */
+}
+
+.steps_title_first::after {
+  content: "";
+  display: block; /* Makes the underline a separate block */
+  width: 100%; /* Matches the title text */
+  height: 3px; /* Thickness of the underline */
+  background-color: orange; /* Orange color for the underline */
+  margin-top: 0.2rem; /* Small space between text and underline */
+}
+
+/* Grid layout for the left side and form */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Left section for guidelines, right section for form */
+  gap: 2rem;
+  border: 1px solid #e5e7eb; /* Border for the grid */
+}
+
+/* Styling for the guidelines section */
+.guidelines {
+   /* Dark background for the guidelines */
+  color: black;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 50px;
+}
+
+.guidelines h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+ font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.guidelines p {
+  margin-bottom: 1.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* .guidelines .highlight {
+  color: #f97316; /* Orange color for highlighted text */
+/* }  */
+.post_question_title{
+    padding-left: 250px;
+}
+
+/* Form Section */
+.form {
+  padding: 2rem;
+  background-color: #F5F5F5; /* White background for the form */
+  border-radius: 8px;
+  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); Subtle shadow */
+}
+
+/* Form label styling */
+.form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem; /* Text size */
+  font-weight: bold;
+  color: #4b5563; /* Dark gray for label text */
+}
+
+/* Input fields */
+.inputField {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  background-color: #fff; /* Light background */
+ 
+  border: 1px solid #d1d5db; 
+   border-radius: 8px; 
+  font-size: 1rem;
+  color: #4b5563;
+  
+}
+
+.inputField:focus {
+  border-color: #6366f1; /* Focus border color */
+  outline: none;
+  background-color: #ffffff;
+}
+
+/* Textarea styling */
+.textareaField {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  background-color: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #4b5563;
+  min-height: 150px; /* Set minimum height for textarea */
+}
+
+.textareaField:focus {
+  border-color: #6366f1;
+  outline: none;
+  background-color: #ffffff;
+ 
+}
+
+/* Submit button */
+.submitBtn {
+  background-color: #2563eb; /* Blue background for button */
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submitBtn:hover {
+  background-color: #4338ca; /* Darker blue on hover */
+}
+
+.submitBtn:focus {
+  outline: none;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr; /* Stacks the form and guidelines on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .guidelines h3 {
+    font-size: 1.25rem;
+  }
+  .guidelines p {
+    font-size: 0.875rem;
+  }
+}

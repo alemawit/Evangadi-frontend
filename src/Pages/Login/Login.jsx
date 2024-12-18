@@ -1,11 +1,13 @@
-import React, { useRef, useState } from "react";
-import axiosBase from "../../axiosConfig";
+import React, { useContext, useRef, useState } from "react";
+import axios from "../../axiosConfig";
 import { useNavigate, Link } from "react-router-dom";
 import classes from "./Login.module.css"; // CSS file for styling
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import VisibilityIcon from "@mui/icons-material/Visibility";
+import {AppState} from "../../App"
 
 const Login = ({ switchToCreateAccount }) => {
+  const {setUser}=useContext(AppState);
   const navigate = useNavigate();
   const emailDom = useRef(null);
   const passwordDom = useRef(null);
@@ -23,14 +25,16 @@ const Login = ({ switchToCreateAccount }) => {
     }
 
     try {
-      const { data } = await axiosBase.post("/users/login", {
+     
+      const { data } = await axios.post("api/users/login", {
         email: emailValue,
         password: passwordValue,
       });
+       setUser(data.user);
 
       alert("Login successful! Please visit the home page.");
       localStorage.setItem("token", data.token);
-      navigate("/"); // Redirect to the home page after login
+      navigate("/home"); // Redirect to the home page after login
     } catch (error) {
       alert(error?.response?.data?.msg || "Login failed!");
       console.log(error.response);

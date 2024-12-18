@@ -20,6 +20,8 @@
 /* Footer section titles */
 .footerSection h3 {
   margin-bottom: 10px;
+  color: white;
+  font-size: 20px;
 }
 .footer_logo{
     background-color: #3B455A;

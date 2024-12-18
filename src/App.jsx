@@ -1,48 +1,69 @@
 import { useEffect, useState, createContext } from "react";
 import { Route, Routes } from "react-router-dom";
-import Home from "./Pages/Home";
-import axiosBase from "./axiosConfig";
 import { useNavigate } from "react-router-dom";
+import axios from "./axiosConfig";
+import Home from "./Pages/Home";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
-import Auth from "./Pages/Auth/Auth"; // Import Auth page
+import Auth from "./Pages/Auth/Auth";
+import Profile from "./Pages/Profile/Profile";
+import LandingPage from "./Components/LandingPage/LandingPage";
+import AskQuestion from './Pages/AskQuestion/AskQuestion'
+import AnswerPage from "./Pages/AnswerPage/AnswerPage";
+
 
 export const AppState = createContext();
 
 function App() {
-  const [user, setUser] = useState();
-  const token = localStorage.getItem("token");
+  const [user, setUser] = useState(null); // State to store the authenticated user
+  const [loading, setLoading] = useState(true); // State for loading status
   const navigate = useNavigate();
 
-  async function checkUser() {
-    try {
-      const { data } = await axiosBase.get("/users/check", {
-        headers: {
-          Authorization: "Bearer " + token,
-        },
-      });
-      setUser(data);
-    } catch (error) {
-      console.log(error.response);
-      navigate("/login");
-    }
+  useEffect(() => {
+    const checkUser = async () => {
+      const token = localStorage.getItem("token"); // Get token from localStorage
+      if (!token) {
+        setLoading(false); // If no token, stop loading
+        return;
+      }
+      try {
+        const { data } = await axios.get("api/users/check", {
+          headers: {
+            Authorization: `Bearer ${token}`, // Pass token in Authorization header
+          },
+        });
+        setUser(data); // Set the authenticated user data
+      } catch (error) {
+        console.error(error.response); // Log any errors
+        navigate("/auth"); // Redirect to login if token is invalid
+      } finally {
+        setLoading(false); // Stop loading
+      }
+    };
+
+    checkUser();
+  }, [navigate]);
+
+  if (loading) {
+    return <h1>Loading...</h1>; // Render loading screen while user is being verified
   }
 
-  useEffect(() => {
-    checkUser();
-  }, []);
-
-  console.log(user);
-
   return (
-    <AppState.Provider value={{ user, setUser }}>
-      <Header />
+    <AppState.Provider value={{ user, setUser, loading }}>
+      {/* Pass user and loading state to Header */}
+      <Header user={user} loading={loading} />
       <Routes>
-        <Route path="/" element={<Home />} />
-        {/* Direct route for Auth */}
-        <Route path="/auth/*" element={<Auth />} />
+        <Route path="/" element={<LandingPage />}>
+          <Route path="/" element={<Auth />} />
+          
+          <Route path="/home" element={<Home />} />
+
+          <Route path="/auth/*" element={<Auth />} />
+          <Route path="/questionpage" element={<AskQuestion />} />
+          <Route path="home/answerpage/:questionid" element={<AnswerPage />} />
+          {/* <Route path="/profile/:userid" element={<Profile />} /> */}
+        </Route>
       </Routes>
-      <Footer />
     </AppState.Provider>
   );
 }

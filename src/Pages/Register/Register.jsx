@@ -48,7 +48,7 @@ console.log({
 });
 
     try {
-      const { data } = await axiosBase.post("/users/register", {
+      const { data } = await axiosBase.post("api/users/register", {
         username: usernameValue,
         email: emailValue,
         password: passwordValue,
@@ -60,7 +60,7 @@ console.log({
 
       alert("Account created successfully!");
       localStorage.setItem("token", data.token);
-      navigate("/login"); // Redirect to the home page after account creation
+      navigate("/auth/login"); // Redirect to the home page after account creation
     } catch (error) {
       alert(error?.response?.data?.msg || "Account creation failed!");
       console.log(error.response);

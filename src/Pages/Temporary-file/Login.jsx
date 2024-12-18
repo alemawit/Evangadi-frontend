@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import axiosBase from "../axiosConfig";
+import axiosBase from "../../axiosConfig";
 import { useNavigate, Link } from "react-router-dom";
 import classes from "./Login.module.css"; // CSS file for styling
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
@@ -25,7 +25,7 @@ function Login() {
 
     try {
       const { data } = await axiosBase.post(
-        isCreatingAccount ? "/users/register" : "/users/login",
+        isCreatingAccount ? "api/users/register" : "api/users/login",
         {
           email: emailValue,
           password: passwordValue,

@@ -62,6 +62,10 @@
   border-radius: 4px;
   font-size: 14px;
 }
+.inputGroup input:focus {
+  outline: none;
+  border-bottom: solid 2px #fe8402;
+}
 
 /* Password wrapper to position the icon inside */
 .passwordWrapper {
@@ -127,56 +131,6 @@
   background-color: #3b5bdb;
 }
 
-/* Container for the About section */
-
-.aboutContainer { 
-    display: flex; justify-content: center; 
-    align-items: center; /* Center the content vertically */ 
-    /* background-color: #F8F8F8; */
-    background-color: transparent; /* Make the background fully transparent */ 
-    
-    border-radius: 8px; 
-    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  */
-    padding: 20px; 
-    height: 500px; 
-    width: 45%; /* Take 45% of the container width */
-    border: none;
-}
-    
-
-/* Box containing the About content */
-.aboutBox {
-  width: 100%;
-}
-
-/* Title of the About section */
-.title_abt {
-  font-size: 20px;
-  color: #FF8301;
-  font-weight: 200;
-  margin-bottom: 10px;
-  text-align: left;
-
-}
-
-/* Subtitle for Evangadi Networks */
-.subtitle {
-  font-size: 40px;
-  color: #DA3C00;
-  margin-bottom: 20px;
-  text-align: left;
-}
-
-/* Description text */
-.description {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #999A99;
-  margin-bottom: 20px;
-  font-family: Arial, sans-serif;
-  /* text-align: center; */
-}
-
 /* Button to the How It Works page */
 .howItWorksButton {
   display: inline-block;
@@ -192,25 +146,5 @@
 .howItWorksButton:hover {
   background-color: #FD8401;
 }
-/***** style for signup form ****/
-/* Add your existing styles here */
 
-/* New styles for create account form */
-.privacyLabel {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 14px;
-}
 
-.privacyLabel a {
-  color: #4c6ef5;
-  text-decoration: underline;
-}
-
-.privacyLabel a:hover {
-  color: #3b5bdb;
-}
-.first_lastName{
-    display: flex;
-}

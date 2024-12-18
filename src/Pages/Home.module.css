@@ -1,0 +1,110 @@
+.home {
+  display: flex;
+  background-color: #F5F5F5;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.upper_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff; /* White background */
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow */
+  margin-bottom: 1rem;
+}
+
+.askQuestion button {
+  background-color: #2563eb; /* Blue background */
+  color: #ffffff; /* White text */
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.welcomeMessage {
+  font-size: 1.2rem;
+  color: #333333; /* Dark gray text */
+}
+
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  background-color: #f8f8f8;
+  /* padding: 20px; */
+  text-align: center;
+  margin-top: 80px;
+}
+
+.header .logo img, .footer .logo img {
+  height: 50px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.welcomeMessage {
+  margin-top: 10px;
+  font-size: 18px;
+  margin-right: 300px;
+  padding-left: 40px;
+}
+.welcomeMessage span{
+  color: orangered;
+}
+
+.mainContent {
+  flex: 1;
+  padding: 20px;
+}
+
+.askQuestion button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-left: 60px;
+}
+
+.searchBar input {
+  width: 80%;
+  padding: 10px;
+  margin-top: 20px;
+  box-sizing: border-box;
+  margin-left: 40px;
+  border-radius: 5px; /* Adjust this value for more or less curve */
+}
+
+
+.questionsList .question {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.detailsLink {
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+}
+
+.footer .socialIcons img {
+  width: 30px;
+  margin: 0 10px;
+}
+
+.links, .contactInfo {
+  margin-top: 20px;
+}
+
+.links a {
+  margin: 0 10px;
+}

@@ -1,75 +1,163 @@
-/* Container for the header */
+/* General Header Container */
 .header {
   position: fixed; /* Fix the header at the top */
   top: 0;
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; /* Keep left and right content apart */
   padding: 10px 20px;
   background-color: white;
   border-bottom: 8px solid transparent;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding-bottom: 18px;
-  z-index: 1000; /* Ensure it stays above other elements */
+  z-index: 1000;
+  box-sizing: border-box;
 }
 
-/* Logo styles */
+/* Logo Section */
 .header__logo {
   display: flex;
   align-items: center;
 }
 
 .header__logoimg {
-  padding-left: 65px;
   height: 35px;
-  margin-right: 40px;
+  margin-right: 20px;
+  margin-left: 70px;
 }
 
-/* Navigation styles */
+/* Flex container for links and authentication buttons */
+.link_wapper {
+  display: flex; /* Flexbox for aligning Home, How It Works, and Logout/Login */
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* Spacing between items */
+  flex-grow: 1; /* Allow content to grow */
+  margin-left: 200px; /* Space between logo and links */
+  padding-left: 350px;
+}
+
 .header__nav {
   display: flex;
-  /* padding-right: -200px; */
   gap: 20px;
-  padding-left: 700px;
 }
 
 .header__link {
   text-decoration: none;
   color: black;
   font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-/* Authentication buttons */
+.header__link:hover {
+  color: #5f63f2;
+}
+
+/* Authentication Buttons */
 .header__auth {
   display: flex;
+  align-items: center;
+  gap: 20px;
+ 
 }
 
-.header__button {
-    box-sizing: border-box;
+.header__button,
+.header__button_Logout {
   background-color: #5f63f2;
   color: white;
   border: none;
   border-radius: 5px;
-  padding: 10px 30px;
+  padding: 10px 20px;
   cursor: pointer;
-  margin-right: 100px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
 }
 
 .header__button:hover {
   background-color: #474bb7;
 }
 
-/* Responsive styling */
+.header__button_Logout {
+  background-color: white;
+  color: black;
+  font-weight: 800;
+}
+
+.header__button_Logout:hover {
+  background-color: #f3f4f6;
+  color: #333;
+}
+
+/* Hamburger Menu */
+ .header__hamburger {
+  position: relative;
+  cursor: pointer;
+   margin-left: 300px;
+ }  
+
+
+.header__hamburgerIcon {
+  font-size: 24px;
+  color: #1f2937;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  z-index: 10;
+  min-width: 150px;
+}
+
+.dropdown__link,
+.dropdown__button {
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
+  text-align: left;
+  text-decoration: none;
+  color: #1f2937;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown__link:hover,
+.dropdown__button:hover {
+  background-color: #f3f4f6;
+  border-radius: 4px;
+}
+
+/* Responsive Styles */
 @media screen and (max-width: 768px) {
   .header {
     flex-direction: column;
     align-items: center;
+    padding: 10px;
+  }
+
+  .link_wapper {
+    flex-direction: column; /* Stack links vertically on smaller screens */
+    gap: 10px;
   }
 
   .header__nav {
-    margin-top: 10px;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+  }
+
+  .header__button,
+  .header__button_Logout {
+    padding: 8px 15px;
+  }
+
+  .header__hamburger {
+    margin-left: 0;
   }
 }
