@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { AppState } from "../App";
-import axios from "../axiosConfig"; // Import axios instance
+import { AppState } from "../../App";
+// import axios from "../../Axios/Axios"; // Import axios instance
 import classes from "./Home.module.css"; // Import CSS module for styles
-import AuthUser from '../Components/AuthUser/AuthUser'
-import AllQuestions from "./AllQuestions/AllQuestions";
+// import AuthUser from '../Components/AuthUser/AuthUser'
+import AllQuestions from "../AllQuestions/AllQuestions";
 
 const Home = () => {
   const { user } = useContext(AppState); // Access the logged-in user from context

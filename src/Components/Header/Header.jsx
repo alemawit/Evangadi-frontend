@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useLocation,useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import classes from "./Header.module.css"; // Import the CSS file for styling
 import logo from "../../assets/image/logo.png";
 import { RxHamburgerMenu } from "react-icons/rx";
@@ -11,82 +11,80 @@ const Header = ({ user, loading }) => {
 
   const handleLogout = () => {
     localStorage.removeItem("token"); // Clear token from storage
-    alert("user logged out successfully!")
-    window.location.href = "/auth"; // Redirect to authentication page
+    alert("User logged out successfully!");
+    window.location.href = "/login"; // Redirect to authentication page
   };
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev); // Toggle menu visibility
   };
 
-  // if (loading) {
-  //   return <h1>Loading...</h1>; // Show loading screen while checking user
-  // }
+  // Close the menu when navigating to a different page
+  const closeMenuOnNavigate = () => {
+    setMenuOpen(false);
+  };
 
   return (
     <header className={classes.header}>
       <div className={classes.header__logo}>
-        <img
-          src={logo}
-          alt="Evangadi Logo"
-          className={classes.header__logoimg}
-        />
+        <Link to={"/login"}>
+          <img
+            src={logo}
+            alt="Evangadi Logo"
+            className={classes.header__logoimg}
+          />
+        </Link>
       </div>
-      <div className={classes.link_wapper}>
-        {location.pathname === "/questionpage" ? (
-          // Show hamburger menu on QuestionPage
-          <div className={classes.header__hamburger}>
-            <RxHamburgerMenu
-              onMouseEnter={toggleMenu}
-              className={classes.header__hamburgerIcon}
-            />
-            
 
-            {menuOpen && (
-              <div className={classes.dropdown}>
-                <Link to="/home" className={classes.dropdown__link}>
-                  Home
-                </Link>
-                {user && (
-                  <button
-                    className={classes.dropdown__button}
-                    onClick={handleLogout}
-                  >
-                    LOG OUT
-                  </button>
-                )}
-              </div>
-            )}
-          </div>
-        ) : (
-          // Default navigation for other pages
-          
-          <nav className={classes.header__nav}>
-            <Link to="/home" className={classes.header__link}>
-              Home
-            </Link>
-            <Link to="/how-it-works" className={classes.header__link}>
-              How it works
-            </Link>
-          </nav>
-        )}
+      {/* Hamburger Menu for Small Screens */}
+      <div className={classes.header__hamburger} onClick={toggleMenu}>
+        <RxHamburgerMenu className={classes.header__hamburgerIcon} />
+      </div>
 
-        {location.pathname !== "/questionpage" && (
-          <div className={classes.header__auth}>
-            {user ? ( // Check if user exists
+      {/* Links / Dropdown Menu */}
+      <div
+        className={`${classes.link_wapper} ${
+          menuOpen ? classes.link_wapper_active : ""
+        }`}
+      >
+        {/* Show specific links based on the current route */}
+        <nav className={classes.header__nav}>
+          <Link
+            to="/home"
+            className={classes.header__link}
+            onClick={closeMenuOnNavigate}
+          >
+            Home
+          </Link>
+          <Link
+            to="/how-it-works"
+            className={classes.header__link}
+            onClick={closeMenuOnNavigate}
+          >
+            How it works
+          </Link>
+        </nav>
+
+        {/* Authentication Buttons */}
+        <div className={classes.header__auth}>
+          {user ? (
+            <button
+              className={classes.header__button_Logout}
+              onClick={handleLogout}
+            >
+              LOG OUT
+            </button>
+          ) : (
+            <Link to="/login">
               <button
-                className={classes.header__button_Logout}
-                onClick={handleLogout}
+                className={classes.header__button}
+                onClick={closeMenuOnNavigate}
               >
-                LOG OUT
+                SIGN IN
               </button>
-            ) : (
-              <Link to="/auth">
-                <button className={classes.header__button}>SIGN IN</button>
-              </Link>
-            )}
-          </div>
-        )} 
+            </Link>
+          )}
+        </div>
       </div>
     </header>
   );

@@ -1,0 +1,339 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+a {
+  text-decoration: none;
+}
+
+/* Container for the middle part of the page */
+.middlePart {
+  background-image: url("../../assets/edited.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-top: 100px;
+  margin-bottom: 50px;
+}
+.mainContainer{
+  background: url('../../assets/image/background.png') no-repeat center center;
+  background-size: cover; /* Cover the entire container */
+  display: flex;
+  justify-content: space-between; /* Space between login and about sections */
+  padding: 20px;
+  height: 100vh; /* Full height to cover the viewport */
+  box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+/* About section */
+.about {
+  width: 50%;
+  padding-left: 35px;
+  padding-bottom: 100px;
+}
+.about h3 {
+  color: orange;
+  font-size: 18px;
+  padding-top: 20px;
+  font-weight: 400;
+}
+.about h1 {
+  color: rgb(75, 69, 111);
+  font-size: 40px;
+  padding-top: 10px;
+  font-weight: 500;
+}
+.about p {
+  line-height: 24px;
+  font-weight: 400;
+  font-size: 16px;
+  max-width: 500px;
+  padding-bottom: 20px;
+  color: rgb(33, 37, 41);
+}
+.howBtn {
+  background-color: #fe8402;
+  color: white;
+  padding: 7px 7px;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  width: 150px;
+  border-color: #fe8402;
+  border-radius: 3px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Login form */
+.loginForm {
+  margin-top: 20px;
+  margin-left: 90px;
+  background-color: white;
+  border-radius: 10px;
+  width: 33%;
+  height: 480px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+span,
+.loginForm h3 {
+  text-align: center;
+  padding-top: 30px;
+}
+.loginForm h3 {
+  font-size: 20px;
+  font-weight: 500;
+  padding-bottom: 20px;
+}
+span p {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgb(33, 37, 41);
+  padding-bottom: 20px;
+}
+span a {
+  color: #fe8402;
+}
+span p a:hover {
+  text-decoration: underline;
+}
+
+.loginFormOnly div {
+  margin-top: 30px;
+}
+
+.loginButton {
+  background-color: #036cdb;
+  color: white;
+  padding: 10px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 80%;
+  border-color: #036cdb;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-left: 35px;
+}
+
+.loginButton:hover {
+  background-color: #fe8402;
+  border-color: #fe8402;
+}
+
+.loginFormOnly input {
+  width: 91%;
+  height: 37px;
+  padding: 5px;
+  font-size: 16px;
+  margin-left: 2px;
+  border: none;
+}
+
+.loginFormOnly .password {
+  margin-left: 30px;
+}
+.password {
+  border: solid 1px silver;
+  width: 85%;
+  border-radius: 5px;
+  position: relative;
+}
+.password_toggle_icon {
+  position: absolute;
+  bottom: 0;
+  right: 10;
+  padding-bottom: 10px;
+}
+.password_toggle_icon:hover {
+  cursor: pointer;
+  color: orange;
+}
+.password:focus-within {
+  border-bottom: solid 2px #fe8402;
+}
+.loginFormOnly input:focus {
+  outline: none;
+}
+.loginFormOnly input::placeholder {
+  padding-left: 5px;
+}
+.loginFormOnly a {
+  margin-left: 230px;
+  color: rgb(254, 132, 2);
+}
+.loginFormOnly a:hover {
+  text-decoration: underline;
+}
+
+/* Sign Up form */
+.signForm {
+  margin-top: 20px;
+  margin-left: 90px;
+  background-color: white;
+  border-radius: 10px;
+  width: 33%;
+  height: 480px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  padding-top: 25px;
+}
+.signForm h3 {
+  text-align: center;
+  font-weight: 500;
+  font-size: 20px;
+}
+.signForm p {
+  margin-top: 10px;
+  font-weight: 400;
+  font-size: 14px;
+}
+.join {
+  background-color: #036cdb;
+  color: white;
+  padding: 7px 7px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 85%;
+  border-color: #036cdb;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-left: 35px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.join:hover {
+  background-color: #fe8402;
+  border-color: #fe8402;
+}
+.account {
+  color: #fe8402;
+  font-size: 16px;
+  font-weight: 400;
+  margin-left: 90px;
+  padding-top: 20px;
+}
+
+.account:hover {
+  text-decoration: underline;
+}
+
+.agree {
+  font-size: 11px;
+  font-weight: 400;
+  margin-left: 70px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.agree a {
+  color: #fe8402;
+  text-decoration: underline;
+}
+
+.signForm input {
+  width: 90%;
+  height: 37px;
+  padding: 5px;
+  font-size: 16px;
+  margin-left: 2px;
+}
+.signForm div form div {
+  margin-bottom: 15px;
+  border: solid 1px silver;
+  width: 88%;
+  margin-left: 25px;
+  border-radius: 5px;
+}
+.field {
+  display: flex;
+  justify-content: center;
+  width: 88%;
+  gap: 15px;
+  margin-left: 25px;
+}
+
+.field input {
+  border: solid 1px silver;
+  border-radius: 5px;
+}
+.field input:focus {
+  outline: none;
+  border-bottom: solid 2px #fe8402;
+}
+.signForm form .same input {
+  border: none;
+}
+.signForm form .same input:focus {
+  outline: none;
+}
+.signForm form .same:focus-within {
+  border-bottom: solid 2px #fe8402;
+}
+.forgotpassword{
+    padding-right: -50px;
+}
+/* ****responsiveness */
+@media screen and (max-width: 768px) {
+  /* Hide the about section */
+  .about {
+    display: none;
+  }
+
+  /* Center the main container and make it full-screen */
+  .mainContainer {
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    margin: 0; /* Remove left margin */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center forms vertically */
+    padding: 0; /* Remove padding */
+  }
+
+  /* Ensure the login and register forms take full width */
+  .loginForm, 
+  .signForm {
+    width: 100%; /* Full width */
+    max-width: 650px; /* Optional: Limit maximum width */
+    margin: 0 auto; /* Center horizontally */
+    height: auto; /* Allow height to adjust dynamically */
+    box-shadow: none; /* Remove shadow for simplicity */
+    border-radius: 0; /* Remove border-radius */
+  }
+
+  /* Adjust padding for better spacing */
+  .loginFormOnly a {
+    margin-left: 10px;
+  }
+
+  /* Adjust button sizes */
+  .loginButton, 
+  .join {
+    width: 90%; /* Fit buttons to container width */
+    margin: 10px auto; /* Center and add spacing */
+  }
+
+  /* Adjust text sizes for smaller screens */
+  .loginForm h3, 
+  .signForm h3 {
+    font-size: 18px; /* Slightly smaller heading */
+  }
+  .agree {
+    font-size: 12px; /* Adjust small text */
+  }
+}
+@media screen and ( max-width:1300px){
+.loginFormOnly a {
+    margin-left: 150px;
+  }
+    
+}
+@media screen and (max-width:960px) {
+    .loginFormOnly a {
+    margin-left: 100px;
+  }
+    
+}

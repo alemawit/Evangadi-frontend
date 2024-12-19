@@ -1,4 +1,4 @@
-import axios from "../../axiosConfig";
+import axios from "../../Axios/Axios";
 import { AppState } from "../../App";
 import { createContext, useContext } from "react";
 import { useRef } from "react";

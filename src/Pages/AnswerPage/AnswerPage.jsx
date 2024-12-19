@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
-import axios from "../../axiosConfig";
-import Avatar from "@mui/material/Avatar";
-import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+import axios from "../../Axios/Axios";
+// import Avatar from "@mui/material/Avatar";
+// import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import { AppState } from "../../App";
 import classes from "./AnswerPage.module.css";
 import { useParams, useNavigate } from "react-router-dom";
@@ -74,7 +74,7 @@ function AnswerPage() {
         { username: user.username, answer: title, userid: user.userid },
       ]);
       Answer.current.value = "";
-      // navigate("/answ");
+      // navigate("/answerpage");
     } catch (error) {
       console.error("Error posting answer:", error);
       alert("Error posting answer");
@@ -100,33 +100,32 @@ function AnswerPage() {
         </>
       )}
 
-      <h3 className={classes.answer_body}>Answers from the community</h3>
+      <div>
+        <h3 className={classes.answer_body}>Answers from the community</h3>
+      </div>
 
-      {Array.isArray(showAnswer) && showAnswer.length > 0 ? (
-        showAnswer.map((answerElement) => (
-          <div key={answerElement.answerid} className={classes.answerItem}>
-            <div className={classes.avatarContainer}>
-              <div>
-              
-                <IoPersonCircle size={40} />
-                <p className={classes.username}>{answerElement.username}</p>
-              </div>
-              <div className={classes.old_answer}>
-                {" "}
-                <p>{answerElement.answer}</p>
+      <div className={classes.answer_item_wrapper}>
+        {Array.isArray(showAnswer) && showAnswer.length > 0 ? (
+          showAnswer.map((answerElement) => (
+            <div key={answerElement.answerid} className={classes.answerItem}>
+              <div className={classes.avatarContainer}>
+                <div>
+                  
+                    <p>
+                      <IoPersonCircle size={40} />
+                    </p>
+                  
+                    <p className={classes.username}>{answerElement.username}</p>
+                 
+                </div>
+                <div className={classes.old_answer}>{answerElement.answer}</div>
               </div>
             </div>
-            {/* {user?.userid === answerElement.userid && (
-              <DeleteForeverIcon
-                className={classes.deleteIcon}
-                onClick={() => handleDeleteAnswer(answerElement.answerid)}
-              />
-            )} */}
-          </div>
-        ))
-      ) : (
-        <p>No answers yet. Be the first to answer!</p>
-      )}
+          ))
+        ) : (
+          <p>No answers yet. Be the first to answer!</p>
+        )}
+      </div>
       <div className={classes.answerInputContainer}>
         <textarea
           className={classes.textarea}

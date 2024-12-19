@@ -1,13 +1,22 @@
+*{
+  box-sizing: border-box;
+}
 /* Container for the footer */
+.outer_container{
+  width: 100%;
+}
 .footerContainer {
  
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  /* align-items: flex-start; */
   padding: 50px;
   
   background-color: #3B455A; /* Dark background color */
   color: #fff; /* White text color */
+  width:  100%;
+  /* margin-right: 20px; */
+  margin: auto;
   
 }
 
@@ -77,4 +86,27 @@
 
 .footerSection ul  {
     color: #808994;
+}
+@media screen and (max-width: 960px) {
+  .footerContainer{
+    box-sizing: border-box;
+    width: 100%;
+  }
+  .contact_section{
+    margin-right:10px;
+  }
+  
+}
+@media screen and (max-width: 768px) {
+  .footerContainer {
+    display: flex;
+    flex-direction: column !important;
+    height: auto;
+  }
+  .socialIcons {
+    display: flex;
+  }
+  .socialIcons li {
+    margin: 5px;
+  }
 }

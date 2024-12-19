@@ -1,179 +1,127 @@
-/* Container for the entire answer page */
-
-body{
-  background-color: #F5F5F5;
-}
 .answerContainer {
-  max-width: 85%;
+  max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #F5F5F5;
-  border-radius: 10px;
-  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
-  margin-top: 100px;
-}
-.right_arrow_title{
-  display: flex;
-  gap: 10px;
+  padding-top: 90px;
 }
 
-/* Question Title and Description */
+.right_arrow_title {
+  /* text-align: center; */
+  padding-top: 60px;
+}
+
 .questionInfo {
   display: flex;
-  margin-bottom: 20px;
+  align-items: center;
+  gap: 10px;
+  margin-top: -10px;
 }
 
 .questionTitle {
-  font-size: 24px;
   font-weight: bold;
-  color: #2d2d2d;
-
-  margin-left: 10px;
-  
+  padding-left: 0;
+  margin-top: 20px;
 }
-.questionTitle::after{
-  
- content: "";
+.questionTitle::after {
+  content: "";
   display: block; /* Makes the underline a separate block */
   width: 130%; /* Matches the title text */
-  height: 3px; /* Thickness of the underline */
+  height: 2px; /* Thickness of the underline */
   background-color: orange; /* Orange color for the underline */
-  margin-top: 0.2rem; 
+  margin-top: 0.2rem; /* Small space between text and underline */
 }
 
 .questionDescription {
-  font-size: 18px;
-  color: #555;
-}
-
-/* Answers Section */
-h3 {
-  font-size: 30px;
-  margin-bottom: 10px;
-  color: #333;
- margin-bottom:20px;
-   
-  
+  /* margin-top: 10px; */
 }
 
 .answer_body {
-  position: relative;
-  border-bottom: none; /* Remove direct border */
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px 0;
 }
 
-.answer_body::after {
-  content: "";
-  display: block;
-  margin-top: 10px; /* Space between text and border */
-  width: 80%;
-  height: 2px;
-  background-color: #ccc;
-}
-.answer_body::before {
-  content: "";
-  display: block;
-  margin-bottom: 10px; /* Space between text and border */
-  width: 80%;
-  height: 2px;
-  background-color: #ccc;
+.answer_item_wrapper {
+  margin-top: 10px;
 }
 
-
-/* Each answer's container */
 .answerItem {
-  max-width: 78%;
-  height: 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid #e0e0e0;
-  padding: 15px;
-  margin-bottom: 10px;
-  border-radius: 8px;
-  
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  /* margin-bottom: 10px; */
 }
-
 
 .avatarContainer {
   display: flex;
   align-items: center;
-  gap: 10px;
+  margin-bottom: -20px;
 }
 
-.avatarContainer p {
-  font-size: 16px;
-  color: #333;
-  font-weight: 600;
+.username {
+  margin-top: -10px ;
 }
 
-.answerItem p {
-  font-size: 16px;
-  color: #555;
-  margin-top: 5px;
-}
-.old_answer{
-  margin-left: 20px;
-  padding-bottom: 30px;
+.old_answer {
+  margin-left: 40px;
+  margin-top: -20px;
 }
 
-/* Delete button */
-.deleteIcon {
-  cursor: pointer;
-  color: #f44336; /* Red */
-  font-size: 30px;
-  transition: color 0.3s;
-}
-
-.deleteIcon:hover {
-  color: #d32f2f;
-}
-
-/* No answers message */
-.answerItem p {
-  font-size: 16px;
-  color: #888;
-  font-style: italic;
-}
-
-/* Answer input form */
 .answerInputContainer {
   margin-top: 20px;
 }
 
-.textarea {
-  width: 80%;
+textarea {
+  width: 100%;
   height: 100px;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 16px;
-  resize: vertical;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 
 .submitButtonContainer {
-  margin-top: 10px;
+  /* text-align: right; */
 }
 
 .submitButton {
-  background-color: #2563eb;
-  color: white;
   padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
+  
   cursor: pointer;
-  transition: background-color 0.3s;
+   background-color: #2563eb; /* Blue background for button */
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: left;
+  margin-left: 0;
+  display: inline-block;
+  
 }
 
+@media screen and (max-width: 768px) {
+  .answerContainer {
+    padding: 10px;
+  }
 
+  .questionTitle {
+    font-size: 1.2em;
+  }
 
-.submitButton:focus {
-  outline: none;
-}
+  .questionDescription {
+    font-size: 0.9em;
+  }
 
-.submitButton:disabled {
-  background-color: #b3b3b3;
-  cursor: not-allowed;
+  .username {
+    font-size: 0.9em;
+  }
+
+  .old_answer {
+    font-size: 0.9em;
+  }
 }

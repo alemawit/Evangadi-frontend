@@ -1,11 +1,11 @@
 /* General Header Container */
 .header {
-  position: fixed; /* Fix the header at the top */
+  position: fixed;
   top: 0;
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Keep left and right content apart */
+  justify-content: space-between;
   padding: 10px 20px;
   background-color: white;
   border-bottom: 8px solid transparent;
@@ -14,7 +14,6 @@
   box-sizing: border-box;
 }
 
-/* Logo Section */
 .header__logo {
   display: flex;
   align-items: center;
@@ -23,18 +22,19 @@
 .header__logoimg {
   height: 35px;
   margin-right: 20px;
-  margin-left: 70px;
 }
 
-/* Flex container for links and authentication buttons */
 .link_wapper {
-  display: flex; /* Flexbox for aligning Home, How It Works, and Logout/Login */
+  display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 20px; /* Spacing between items */
-  flex-grow: 1; /* Allow content to grow */
-  margin-left: 200px; /* Space between logo and links */
-  padding-left: 350px;
+  justify-content: flex-end;
+  gap: 20px;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.link_wapper_active {
+  max-height: 500px;
+  opacity: 1;
 }
 
 .header__nav {
@@ -53,12 +53,10 @@
   color: #5f63f2;
 }
 
-/* Authentication Buttons */
 .header__auth {
   display: flex;
   align-items: center;
   gap: 20px;
- 
 }
 
 .header__button,
@@ -73,10 +71,6 @@
   transition: background-color 0.3s ease;
 }
 
-.header__button:hover {
-  background-color: #474bb7;
-}
-
 .header__button_Logout {
   background-color: white;
   color: black;
@@ -89,75 +83,40 @@
 }
 
 /* Hamburger Menu */
- .header__hamburger {
-  position: relative;
+.header__hamburger {
+  display: none;
   cursor: pointer;
-   margin-left: 300px;
- }  
-
+}
 
 .header__hamburgerIcon {
   font-size: 24px;
   color: #1f2937;
 }
 
-.dropdown {
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  z-index: 10;
-  min-width: 150px;
-}
-
-.dropdown__link,
-.dropdown__button {
-  display: block;
-  width: 100%;
-  padding: 8px 12px;
-  text-align: left;
-  text-decoration: none;
-  color: #1f2937;
-  font-weight: 700;
-  cursor: pointer;
-  border: none;
-  background: none;
-  transition: background-color 0.2s ease;
-}
-
-.dropdown__link:hover,
-.dropdown__button:hover {
-  background-color: #f3f4f6;
-  border-radius: 4px;
-}
-
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
-  .header {
+  .link_wapper {
     flex-direction: column;
-    align-items: center;
-    padding: 10px;
+    align-items: flex-start;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
   }
 
-  .link_wapper {
-    flex-direction: column; /* Stack links vertically on smaller screens */
-    gap: 10px;
+  .link_wapper_active {
+    max-height: 300px;
+    opacity: 1;
   }
 
   .header__nav {
     flex-direction: column;
   }
 
-  .header__button,
-  .header__button_Logout {
-    padding: 8px 15px;
+  .header__auth {
+    flex-direction: column;
   }
 
   .header__hamburger {
-    margin-left: 0;
+    display: block;
   }
 }
